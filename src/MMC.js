@@ -1,5 +1,5 @@
-import Conta from "./Contas.js"
-import Search from "./Search.js"
+import Conta from "./Contas.js";
+import Search from "./Search.js";
 
 let segundos = 0;
 let minutos = 0;
@@ -13,15 +13,21 @@ let proximaPergun = document.getElementById("btn");
 
 // Inicialização
 let search = new Search(window.location.search);
-qtdPerguntas.textContent = search.qtdPergun;
+
+// Verificar se 'search.qtdPergun' é um número e exibir
+if (!isNaN(search.qtdPergun) && search.qtdPergun > 0) {
+  qtdPerguntas.textContent = search.qtdPergun;
+} else {
+  qtdPerguntas.textContent = "0"; // Em caso de erro, exibe "0"
+}
 let conta = new Conta(search.max, search.min, search.controle);
-let answer = conta.answer;
+let answer = conta.answerMMC; 
 
 num1.textContent = conta.random1;
 num2.textContent = conta.random2;
 
 // Event Listeners
-resposta.addEventListener("keydown", event => {
+resposta.addEventListener("keydown", (event) => {
   resposta.classList.remove("respostaErrada", "respostaCerta");
   if (event.key === "Enter") {
     checkAnswer();
@@ -29,7 +35,6 @@ resposta.addEventListener("keydown", event => {
 });
 
 proximaPergun.addEventListener("click", () => checkAnswer());
-
 
 setInterval(() => {
   segundos++;
@@ -41,9 +46,9 @@ setInterval(() => {
 
 // Funções
 function checkAnswer() {
-  if (resposta.value == answer) {
+  if (parseInt(resposta.value) === answer) {
     resposta.classList.add("respostaCerta");
-    search.qtdPergun--;
+    search.qtdPergun = parseInt(search.qtdPergun) - 1;
     qtdPerguntas.textContent = search.qtdPergun;
     newConta();
   } else {
@@ -59,17 +64,12 @@ function newConta() {
       window.location.href = `estatisticas.html?${formattedMinutos}:${formattedSegundos}`;
       return;
     }
-        const newConta = new Conta(search.max, search.min, search.controle)
-        newConta.answerSoma = search.qtdPergun
-        answer = newConta.answer
-        if(search.qtdPergun <= search.controle) {
-          document.querySelector(".acao").innerHTML = "-"
-        }
-        resposta.value = ""
-        resposta.classList.remove("respostaCerta")
-        num1.textContent = newConta.random1
-        num2.textContent = newConta.random2
-      }, 1000)
-    }
 
-    
+    const newConta = new Conta(search.max, search.min, search.controle);
+    answer = newConta.answerMMC;
+    resposta.value = "";    
+    resposta.classList.remove("respostaCerta");
+    num1.textContent = newConta.random1;
+    num2.textContent = newConta.random2;
+  }, 1000);
+}

@@ -4,47 +4,65 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Multiplicação e Divisão</title>
+
+  <!--add bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--add css -->
   <link rel="stylesheet" href="multDivisao.css">
 </head>
+
 <body>
-  <div class="header">
+  
+  <div class="content">
+
     <!--Content before waves-->
-    <div class="inner-header">
-      <div id="qtdPerguntas">
-        <h3>Perguntas restantes: <span>00</span></h3>
+    <div class="container justify-content-center" id="main">
+      <div class="row" id="mainrow">
+        <h2> RoadMath </h2>
+
+      <div>
+        <h1 style="font-size: 20px;">Perguntas restantes: <span> </span> </h1>
       </div>
       <div class="conta">
-        <div class="acao">X</div>
+        <div class="acao" style="font-size: 35px;">x</div>
         <div class="num">
           <div id="num1"></div>
           <div id="num2"></div>
-          <div class="divisor">____</div>
         </div>
       </div>
-      <input type="number" name="resposta" id="resposta">
-      <button>Proxima</button>
+      <br> <div class="col">
+        <input type="number" name="resposta" id="resposta"></div>
+      <br>
+      <div class="btn" id="btn">próxima</div>
+      
     </div>
-  
+  </div>
+
     <!--Waves Container-->
     <div>
-      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28"
+        preserveAspectRatio="none" shape-rendering="auto">
         <defs>
           <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
         </defs>
         <g class="parallax">
-          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(245, 246, 247,0.7" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(245, 246, 247,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(245, 246, 247,0.3)" />
           <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
       </svg>
     </div>
+    </div>
     <!--Waves end-->
   
-  </div>
 
   <script type="module" src="multDivisao.js"></script>
+
+    <!--add bootstrap javascipt-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

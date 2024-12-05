@@ -1,38 +1,55 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+@import url('https://fonts.cdnfonts.com/css/rawline');
+
+body{
+  background: rgb(2,66,131);
+  background: linear-gradient(90deg, rgba(2,66,131,1) 27%, rgba(2,9,59,1) 73%, rgba(2,9,59,1) 100%);
+  font-family: 'Rawline', sans-serif;
+  font-weight: 600;
+  color: #f5f6f7;
+}
 
 h1,a {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  letter-spacing: 2px;
-  font-size: 48px;
+  font-family: 'Rawline', sans-serif;
+   font-weight: bold;
+   color: #f5f6f7;
+   font-size: 25px;
 }
 
-.header {
+h2{
+  color:#fff;
+  font-weight: 800;
+  transition: transform 0.4s ease-in-out;
+  font-size: 60px;
+}
+
+#main{
+  height: 100%;
   position: relative;
-  text-align: center;
-  background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
-  color: rgb(255, 255, 255);
 }
 
-.inner-header {
-  height: 80vh;
-  margin: 0 auto;
-  padding: 60px 0 0 0;
-  max-width: 600px;
+#mainrow{
+  margin-top:80px;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  text-align: center;
+  align-items: center;
+  width: fit-content;
+  max-width: 80%;
+  min-width: 50%;
+  justify-content: center;
+  display: block;
 }
+
 
 
 .waves {
-  position: relative;
+  position: fixed;
   width: 100%;
-  height: 50px;
-  margin-bottom: -7px;
+  height: 100px;
+   bottom: 0;
+  left: 0;
   /*Fix for safari gap*/
   min-height: 50px;
   max-height: 100px;
@@ -73,6 +90,108 @@ h1,a {
   }
 }
 
+.conta {
+  background: rgba(2, 9, 59, 1);
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px 38px 30px 22px;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  line-height: 45px;
+  border-radius: 15px;
+  border: #00358a, 1px, solid;
+}
+
+.acao {
+  display: flex;
+  align-items: center;
+}
+
+#num1, #num2{
+  color: #f5f6f7;
+}
+
+.divisor {
+  line-height: 0;
+  position: relative;
+  top: -20px;
+}
+
+input {
+  width: 80%;
+  border-radius: 10px;
+  border: rgba(2, 9, 59, 1);
+  border-style: double;
+  height: 46px;
+  background-color: #f5f6f7;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Rawline', sans-serif;
+  font-weight: 600;
+  display: flex;
+  margin: 5px auto;
+}
+
+
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.respostaCerta {
+  border: 5px solid rgb(6, 180, 6);
+}
+
+.respostaErrada {
+  border: 5px solid rgb(114, 5, 5);
+}
+
+.btn{
+  font-size: 16px;
+  font-family: 'Rawline', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  text-transform:capitalize; 
+  background: #02093b;
+  text-align: center;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+  margin-top: 3px;
+  height: auto;
+  width: auto;
+}
+
+.btn:hover{
+  opacity: 0.9;
+  box-shadow: 1px 1px 2px #002869, 0 0 25px #002869, 0 0 5px #002869;
+  background-color: #002869;
+  color: #fff;
+  transform: scale(1.1);
+}  
+
+.btn::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #00358a;
+  z-index: -1;
+  transition: all 1.3s;
+}
+
+.btn:hover::before{
+  width: 160%;
+}
+
+#qtdPerguntas {
+  width: 60%;
+  margin: 5px;
+}
+
 /*Shrinking for mobile*/
 @media (max-width: 500px) {
   .waves {
@@ -83,76 +202,4 @@ h1,a {
   h1 {
     font-size: 24px;
   }
-}
-
-.conta {
-  background: rgba(84, 58, 183, 1);
-  width: 60%;
-  margin: 0 auto;
-  padding: 30px 38px 30px 22px;
-  display: flex;
-  justify-content: center;
-  font-size: 50px;
-  line-height: 45px;
-  border-radius: 15px;
-}
-
-.acao {
-  display: flex;
-  align-items: flex-end;
-}
-
-.divisor {
-  line-height: 0;
-  position: relative;
-  top: -20px;
-}
-
-input {
-  width: 60%;
-  border-radius: 15px;
-  border: rgba(84, 58, 183, 1);
-  height: 50px;
-  font-size: 30px;
-  text-align: center;
-  display: flex;
-  margin: 5px auto;
-}
-
-input:focus {
-  outline: none;
-}
-
-input::-webkit-inner-spin-button {
-  display: none;
-}
-
-.respostaCerta {
-  border: 3px solid rgb(31, 194, 31);
-}
-
-.respostaErrada {
-  border: 3px solid rgb(194, 31, 31);
-}
-
-button {
-  width: 80px;
-  padding: 9px;
-  font-weight: bold;
-  float: right;
-  margin-right: 20%;
-  border-radius: 10px;
-  border: none;
-  background: rgba(84, 58, 183);
-  color: rgb(255, 255, 255);
-}
-
-#qtdPerguntas {
-  width: 80%;
-  margin: 5px;
-}
-
-#acao {
-  font-size: 30px;
-  font-family: sans-serif;
 }

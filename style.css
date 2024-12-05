@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/rawline');
 
-* {
-  font-family: 'Roboto', sans-serif;
+body{
+  background-color:#f5f6f7;
+  font-family: 'Rawline', sans-serif;
+   font-weight: 600;
   margin: 0;border: 0;padding: 0;
   box-sizing: border-box;
   outline: none; border: none;
@@ -9,3 +12,159 @@
   text-transform: capitalize;
   transition: .2s linear;
 }
+
+#main{
+  height: 100%;
+  position: relative;
+}
+
+#box{
+  background-color: #02093b;
+  width: fit-content;
+  min-width: 300px;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  border-radius: 6%;
+}
+
+
+#mainrow{
+  margin-top:80px;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: block;
+}
+
+h1{
+  color:#02093b;
+  font-weight: 800;
+  transition: transform 0.4s ease-in-out;
+  font-size: 60px;
+}
+
+h1:hover{
+  transform: scale(1.1);
+  color: #000b5e;
+}
+
+#btn{
+  font-size: 16px;
+  font-family: 'Rawline', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  text-transform:capitalize; 
+  background: #02093b;
+  text-align: center;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+  margin-top: 3px;
+  height: auto;
+}
+
+
+
+#btn:hover{
+  opacity: 0.9;
+  box-shadow: 1px 1px 2px #002869, 0 0 25px #002869, 0 0 5px #002869;
+  background-color: #002869;
+  color: #fff;
+  transform: scale(1.1);
+}  
+
+#btn::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #00358a;
+  z-index: -1;
+  transition: all 1.3s;
+}
+
+#btn:hover::before{
+  width: 160%;
+}
+
+.form-select, select, option{
+  background-color: #02093b;
+  color: #f5f6f7;
+  border: #f5f6f7;
+  border-width: 4px;
+  border-style: outset;
+  border-radius: 7%;
+  font-family: 'Rawline', sans-serif;
+  font-weight: 600;
+  height: auto;
+  text-transform: uppercase;
+  width: auto;
+  font-size: 15px;
+}
+.form-select{
+  appearance: none; /* Remove o ícone de seta padrão */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center; 
+  background-size: 12px;
+}
+
+/* waves */
+.waves {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/* Animation */
+.parallax>use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+
